@@ -3,9 +3,17 @@ import { connect } from "react-redux";
 class NoteItem extends Component {
 
     actionOfEditButton = ()=>{
-        var thisValueEdit = this.props.valueOfNote;
+var thisValueEdit = this.props.valueOfNote;
+        
         this.props.changeStatusEdit();
         this.props.getDataItemForEdit(thisValueEdit);
+    }
+
+    actionOfDeleteButton = ()=>{
+    var thisValueEdit = this.props.valueOfNote;
+        var GetId = thisValueEdit.key;
+        this.props.deleteNoteById(GetId);
+        console.log(GetId);
     }
 
     render() {
@@ -20,7 +28,7 @@ class NoteItem extends Component {
                         </span>
                         <div className="btn-group float-lg-right">
                         <button onClick= { () => this.actionOfEditButton() } className="btn btn-info ">Edit</button>
-                        <button className="btn btn-warning">Delete</button>
+                        <button onClick= { () => this.actionOfDeleteButton() } className="btn btn-warning">Delete</button>
                         </div>
                     </div>
                     <div id={"collapse" + this.props.index } className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -39,6 +47,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch({
                 type:"GET_DATA_NOTE_TO_UPDATE",
                 Item
+            })
+        },
+        deleteNoteById : (GetId) =>{
+            dispatch({
+                type: "DELETE_NOTE_BY_ID",
+                GetId
             })
         }
     }

@@ -48,7 +48,7 @@ class NoteFormForEdit extends Component {
                     <small id="helpId" className="text-muted">Contents</small>
                     <textarea defaultValue= { this.props.dataReive.noteContent } onChange={ (event) => this.changEvent(event) } name="noteContent" className="form-control" rows={3} placeholder="Content" />
                     <div className="text-center pt-2">
-                        <input onClick = { () => this.actionForButtonUpdate() }  className="btn btn-info" type="reset" defaultValue="Add new" />
+                        <input  onClick = { () => this.actionForButtonUpdate() }  className="btn btn-info" type="reset" defaultValue="Add new" />
                     </div>
                     </form>
                 </div>

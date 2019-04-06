@@ -1,14 +1,16 @@
 import { fireBaseConnect } from './../fireBaseConnect';
 
 
-const nameInitialState = {}
-const name = (state = nameInitialState, action) => {
+const DeleteByIdInitialState = {
+        idOfNote : ''
+}
+const Delete = (state = DeleteByIdInitialState, action) => {
     switch (action.type) {
-        case ACTION_TYPE_1:
-            return state
-        case ACTION_TYPE_2:
+        case "DELETE_NOTE_BY_ID":
+            fireBaseConnect.child(action.GetId).remove();
             return state
         default:
             return state
     }
 }
+export default Delete;
