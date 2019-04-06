@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/hieusmiths.github.io/Ahihi/precache-manifest.c2bc34041c63dfe4d33a194cec4c28b2.js"
+  "/Ahihi/precache-manifest.363a03d23b4648aad702791f05142cb3.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/hieusmiths.github.io/Ahihi/index.html", {
+workbox.routing.registerNavigationRoute("/Ahihi/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
